@@ -5,15 +5,11 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+// Pre-generated Java from AIDL — zero AIDL compilation at platform build time
 filegroup {
     name: "vold_aidl",
-    srcs: [
-        "binder/android/os/IVold.aidl",
-        "binder/android/os/IVoldListener.aidl",
-        "binder/android/os/IVoldMountCallback.aidl",
-        "binder/android/os/IVoldTaskListener.aidl",
-    ],
-    path: "binder",
+    srcs: ["aidl-gen/vold/**/*.java"],
+    path: "aidl-gen/vold",
 }
 
 cc_library_static {
